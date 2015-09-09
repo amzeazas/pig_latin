@@ -1,26 +1,23 @@
 var pigLatin = function(text) {
-  var array = text.split("-").join(" - ").split(" ");
+  var array = text.split(/\b/);
   var newArray = []
   array.forEach(function(word) {
-    if (word.match(/^$/)) {
-      word.replace(/^$/, " ");
+    if (word.match(/[,.!?-]|\s|\s-\s/)) {
       word;
-    } else if (word.match(/^-$/)) {
-      word;
-    } else if (word[0].match(/[aeiouAEIOU]/)) {
+    } else if (word[0].match(/[aeiou]/i)) {
       word += "ay";
-    } else if (word[0].match(/[yY]/)) {
-      var preY = word.match(/\b([yY])/)[0];
+    } else if (word[0].match(/[y]/i)) {
+      var preY = word.match(/\b([y])/i)[0];
       var postY = word.slice(preY.length);
       word = postY + preY + "ay";
     } else {
-      var pre = word.match(/\b([bcdfghjklmnprstvwxzBCDFGHJKLMNPRSTVWXZ]|qu|QU)+/)[0];
+      var pre = word.match(/\b([bcdfghjklmnprstvwxz]|qu)+/i)[0];
       var post = word.slice(pre.length);
       word = post + pre + "ay";
     }
     newArray.push(word);
   });
-  return newArray.join(" ").replace(/\s-\s/g, "-");
+  return newArray.join("").toLowerCase();
 };
 
 $(document).ready(function() {

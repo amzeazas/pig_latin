@@ -7,10 +7,10 @@ var pigLatin = function(text) {
       word;
     } else if (word.match(/^-$/)) {
       word;
-    } else if (word[0].match(/[aeiou]/)) {
+    } else if (word[0].match(/[aeiouAEIOU]/)) {
       word += "ay";
     } else {
-      var pre = word.match(/\b([bcdfghjklmnprstvwxyz]|qu)+/)[0];
+      var pre = word.match(/\b([bcdfghjklmnprstvwxyzBCDFGHJKLMNPRSTVWXYZ]|qu|QU)+/)[0];
       var post = word.slice(pre.length);
       word = post + pre + "ay";
     }
@@ -18,3 +18,16 @@ var pigLatin = function(text) {
   });
   return newArray.join(" ").replace(/\s-\s/g, "-");
 };
+
+$(document).ready(function() {
+  $("form#translator").submit(function(event) {
+    var text = $("textarea#text").val();
+    var result = pigLatin(text);
+
+    $(".translation").empty();
+    $(".translation").text(result);
+
+    $("#result").show();
+    event.preventDefault();
+  });
+});

@@ -10,21 +10,20 @@
 <body>
   <div class="container">
     <h1>Pig-Latin Translator</h1>
-
-    <form id="translator">
-      <div class="form-group">
+    <div class="form-group">
+      <form id="translator">
         <label for="text">Enter in the text you want translated.</label>
         <br>
-        <textarea name="text" rows="8" cols="40" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-success">Translate!</button>
-    </form>
+        <textarea class="form-control" id="text"></textarea>
+        <br>
+        <button type="submit" class="btn btn-success">Translate!</button>
+      </form>
+    </div>
     <br>
     <div id="result">
-      <p>Here is your translated text:
-        <br>
-        <span class="translation"></span>
-      </p>
+      <p>Here is your translated text:</p>
+      <br>
+      <p><span class="translation"></span></p>
     </div>
   </div>
 </body>

@@ -22,4 +22,8 @@ describe('pigLatin', function() {
   it("adds y with ay to the end of the word", function() {
     expect(pigLatin("yoda")).to.equal("odayay");
   });
+
+  it("treats hyphenated words as two words", function() {
+    expect(pigLatin("qui-gon")).to.equal("iquay-ongay");
+  });
 });

@@ -9,8 +9,12 @@ var pigLatin = function(text) {
       word;
     } else if (word[0].match(/[aeiouAEIOU]/)) {
       word += "ay";
+    } else if (word[0].match(/[yY]/)) {
+      var preY = word.match(/\b([yY])/)[0];
+      var postY = word.slice(preY.length);
+      word = postY + preY + "ay";
     } else {
-      var pre = word.match(/\b([bcdfghjklmnprstvwxyzBCDFGHJKLMNPRSTVWXYZ]|qu|QU)+/)[0];
+      var pre = word.match(/\b([bcdfghjklmnprstvwxzBCDFGHJKLMNPRSTVWXZ]|qu|QU)+/)[0];
       var post = word.slice(pre.length);
       word = post + pre + "ay";
     }

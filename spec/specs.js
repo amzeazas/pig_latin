@@ -26,4 +26,8 @@ describe('pigLatin', function() {
   it("treats hyphenated words as two words", function() {
     expect(pigLatin("qui-gon")).to.equal("iquay-ongay");
   });
+
+  it("doesn't change dashes in text", function() {
+    expect(pigLatin("remember - qui-gon is cool")).to.equal("ememberray - iquay-ongay isay oolcay");
+  });
 });

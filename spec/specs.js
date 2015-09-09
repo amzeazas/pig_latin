@@ -1,6 +1,6 @@
 describe('pigLatin', function() {
   it("add ay to the end of a word", function() {
-    expect(pigLatin("obiwan")).to.equal("obiwanay");
+    expect(pigLatin("ackbar")).to.equal("ackbaray");
   });
 
   it("adds consonant with ay to the end of the word", function() {
@@ -12,7 +12,7 @@ describe('pigLatin', function() {
   });
 
   it("adds qu with ay to the end of the word", function() {
-    expect(pigLatin("quigon")).to.equal("igonquay");
+    expect(pigLatin("queen amidala")).to.equal("eenquay amidalaay");
   });
 
   it("adds consonant + qu with ay to the end of the word", function() {

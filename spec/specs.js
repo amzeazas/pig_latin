@@ -30,4 +30,8 @@ describe('pigLatin', function() {
   it("doesn't change dashes in text", function() {
     expect(pigLatin("remember - qui-gon is cool")).to.equal("ememberray - iquay-ongay isay oolcay");
   });
+
+  it("processes contractions", function() {
+    expect(pigLatin("stormtroopers can't aim")).to.equal("ormtroopersstay an'tcay aimay");
+  });
 });

@@ -18,4 +18,8 @@ describe('pigLatin', function() {
   it("adds consonant + qu with ay to the end of the word", function() {
     expect(pigLatin("squib")).to.equal("ibsquay");
   });
+
+  it("adds y with ay to the end of the word", function() {
+    expect(pigLatin("yoda")).to.equal("odayay");
+  });
 });

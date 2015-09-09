@@ -6,4 +6,8 @@ describe('pigLatin', function() {
   it("adds consonant with ay to the end of the word", function() {
     expect(pigLatin("vader")).to.equal("adervay");
   });
+
+  it("adds consonants with ay to the end of the word", function() {
+    expect(pigLatin("darth vader")).to.equal("arthday adervay");
+  });
 });

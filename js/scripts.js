@@ -11,5 +11,5 @@ var pigLatin = function(text) {
     }
     newArray.push(word);
   });
-  return newArray.join();
+  return newArray.join(" ");
 };

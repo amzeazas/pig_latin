@@ -2,7 +2,10 @@ var pigLatin = function(text) {
   var array = text.split("-").join(" - ").split(" ");
   var newArray = []
   array.forEach(function(word) {
-    if (word.match(/[^a-zA-Z]/)) {
+    if (word.match(/^$/)) {
+      word.replace(/^$/, " ");
+      word;
+    } else if (word.match(/^-$/)) {
       word;
     } else if (word[0].match(/[aeiou]/)) {
       word += "ay";
@@ -13,5 +16,5 @@ var pigLatin = function(text) {
     }
     newArray.push(word);
   });
-  return newArray.join(" ").replace(/\s-\s/, "-");
+  return newArray.join(" ").replace(/\s-\s/g, "-");
 };
